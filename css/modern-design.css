@@ -1,0 +1,181 @@
+:root {
+    /* Modern Color System */
+    --primary: #6366f1; /* Modern Indigo */
+    --primary-light: #818cf8;
+    --primary-dark: #4f46e5;
+    --secondary: #10b981; /* Modern Emerald */
+    --secondary-light: #34d399;
+    --secondary-dark: #059669;
+    --accent: #f59e0b; /* Modern Amber */
+    --accent-light: #fbbf24;
+    --accent-dark: #d97706;
+    
+    /* Neutral Colors */
+    --neutral-100: #ffffff;
+    --neutral-200: #f8fafc;
+    --neutral-300: #e2e8f0;
+    --neutral-400: #cbd5e1;
+    --neutral-500: #94a3b8;
+    --neutral-600: #64748b;
+    --neutral-700: #475569;
+    --neutral-800: #334155;
+    --neutral-900: #1e293b;
+    
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing System */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+    --space-7: 4rem;
+    --space-8: 6rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    
+    /* Z-index layers */
+    --z-negative: -1;
+    --z-elevate: 1;
+    --z-sticky: 100;
+    --z-drawer: 200;
+    --z-modal: 300;
+    --z-popover: 400;
+    --z-toast: 500;
+}
+
+/* Dark Mode Colors */
+[data-theme="dark"] {
+    --primary: #818cf8;
+    --primary-light: #a5b4fc;
+    --primary-dark: #6366f1;
+    --secondary: #34d399;
+    --secondary-light: #6ee7b7;
+    --secondary-dark: #10b981;
+    --accent: #fbbf24;
+    --accent-light: #fcd34d;
+    --accent-dark: #f59e0b;
+    
+    --neutral-100: #0f172a;
+    --neutral-200: #1e293b;
+    --neutral-300: #334155;
+    --neutral-400: #475569;
+    --neutral-500: #64748b;
+    --neutral-600: #94a3b8;
+    --neutral-700: #cbd5e1;
+    --neutral-800: #e2e8f0;
+    --neutral-900: #ffffff;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-body);
+    color: var(--neutral-900);
+    background-color: var(--neutral-100);
+    line-height: 1.6;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+[data-theme="dark"] .glass {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neumorphism */
+.neumorph {
+    background: var(--neutral-200);
+    border-radius: var(--radius-md);
+    box-shadow: 
+        8px 8px 16px var(--neutral-300),
+        -8px -8px 16px var(--neutral-100);
+}
+
+[data-theme="dark"] .neumorph {
+    background: var(--neutral-800);
+    box-shadow: 
+        8px 8px 16px var(--neutral-900),
+        -8px -8px 16px var(--neutral-700);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn var(--transition-normal);
+}
+
+.animate-slide-up {
+    animation: slideUp var(--transition-normal);
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hover-lift {
+    transition: transform var(--transition-fast);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+}
+
+/* Cursor Bubble Effect */
+.cursor-bubble {
+    pointer-events: none;
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    opacity: 0.5;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, opacity 0.2s;
+    z-index: var(--z-toast);
+} 
