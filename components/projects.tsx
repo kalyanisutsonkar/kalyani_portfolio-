@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Layers, Zap, Smartphone, Globe } from "lucide-react";
+import { ExternalLink, Layers, Zap, Smartphone, Globe } from "lucide-react";
+import { GithubIcon as Github } from "@/components/icons";
 
 const projects = [
   {

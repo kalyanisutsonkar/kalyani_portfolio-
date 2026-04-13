@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
+import { GithubIcon as Github } from "@/components/icons";
 
 export function Hero() {
   return (

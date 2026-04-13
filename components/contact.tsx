@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Github, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
+import { GithubIcon as Github } from "@/components/icons";
 
 export function Contact() {
   return (
