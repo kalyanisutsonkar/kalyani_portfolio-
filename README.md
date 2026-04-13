@@ -1,114 +1,36 @@
-<<<<<<< HEAD
-# kalyani_portfolio-
-=======
-# Kalyani Sutsonkar - Portfolio Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A modern, responsive portfolio website built with HTML, CSS, and JavaScript to showcase Kalyani Sutsonkar's work and skills as a web developer.
+## Getting Started
 
-## 🌟 Features
+First, run the development server:
 
-- Responsive design that works on all devices
-- Modern and clean user interface
-- Smooth animations and transitions
-- Interactive project showcase
-- Skills visualization
-- Contact form with validation
-- Social media integration
-
-## 📋 Pages
-
-1. **Home** - Introduction and featured projects
-2. **About** - Professional background and education
-3. **Projects** - Portfolio of work with filtering
-4. **Skills** - Technical and soft skills
-5. **Contact** - Contact form and information
-
-## 🛠️ Technologies Used
-
-- HTML5
-- CSS3 (with CSS Variables and Flexbox/Grid)
-- JavaScript (ES6+)
-- Font Awesome Icons
-- Google Fonts
-
-## 🚀 Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/kalyani-portfolio.git
-   ```
-
-2. Open `index.html` in your browser to view the website.
-
-## 📁 Project Structure
-
-```
-kalyani-portfolio/
-├── index.html
-├── about.html
-├── projects.html
-├── skills.html
-├── contact.html
-├── css/
-│   ├── style.css
-│   └── responsive.css
-├── js/
-│   └── main.js
-└── assets/
-    ├── images/
-    └── resume.pdf
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 🎨 Customization
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. **Colors**: Edit the CSS variables in `css/style.css`:
-   ```css
-   :root {
-       --primary-color: #2c3e50;
-       --secondary-color: #34495e;
-       --accent-color: #3498db;
-       /* ... other variables ... */
-   }
-   ```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-2. **Content**: Update the HTML files with your information:
-   - Personal details
-   - Projects
-   - Skills
-   - Contact information
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-3. **Images**: Replace the placeholder images in the `assets/images` directory with your own.
+## Learn More
 
-## 📱 Responsive Design
+To learn more about Next.js, take a look at the following resources:
 
-The website is built with a mobile-first approach and includes breakpoints for:
-- Mobile devices (320px and up)
-- Tablets (768px and up)
-- Desktops (1024px and up)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 🔧 JavaScript Features
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Mobile navigation toggle
-- Smooth scrolling
-- Form validation
-- Project filtering
-- Scroll reveal animations
-- Skill bar animations
+## Deploy on Vercel
 
-## 📄 License
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👤 Author
-
-Kalyani Sutsonkar
-- Email: kalyani.sutsonkar@example.com
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [Your GitHub Profile]
-
-## 🙏 Acknowledgments
-
-- Font Awesome for icons
-- Google Fonts for typography
-- Unsplash for placeholder images 
->>>>>>> fe11a32 (Done the project)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
