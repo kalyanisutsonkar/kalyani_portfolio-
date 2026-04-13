@@ -12,10 +12,7 @@ const projects = [
     tech: ["React.js", "Clinical Data", "Scalable UI"],
     icon: <Layers className="text-cyan-500" />,
     link: "https://pro.dev.anatomymapper.com/pre-annotation-main/",
-    credentials: {
-      username: "puneetpugaliateam@gmail.com",
-      password: "Puneet@123"
-    }
+    hasCredentials: true
   },
   {
     title: "Audio Vision Event",
@@ -47,8 +44,21 @@ const projects = [
   }
 ];
 
-function ProjectCard({ project, i }: { project: typeof projects[0], i: number }) {
-  const [showCreds, setShowCreds] = useState(false);
+function ProjectCard({ project, i }: { project: typeof projects[0] & { hasCredentials?: boolean }, i: number }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleDemoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const user = process.env.NEXT_PUBLIC_ANATOMY_USER;
+    const pass = process.env.NEXT_PUBLIC_ANATOMY_PASS;
+    
+    if (user && pass) {
+      navigator.clipboard.writeText(`Email: ${user}\nPassword: ${pass}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
+      window.open(project.link, '_blank');
+    }
+  };
 
   return (
     <motion.div
@@ -64,13 +74,14 @@ function ProjectCard({ project, i }: { project: typeof projects[0], i: number })
           {project.icon}
         </div>
         <div className="flex space-x-2">
-          {project.credentials && (
+          {project.hasCredentials && (
             <button 
-              onClick={() => setShowCreds(!showCreds)}
-              className={`p-2 transition-colors rounded-lg ${showCreds ? 'bg-cyan-500 text-white' : 'text-zinc-400 hover:text-cyan-500 dark:hover:text-cyan-400 bg-zinc-100 dark:bg-zinc-900'}`}
-              title="View Demo Credentials"
+              onClick={handleDemoClick}
+              className={`px-3 py-2 transition-colors rounded-lg flex items-center space-x-2 ${copied ? 'bg-emerald-500 text-white' : 'text-zinc-600 dark:text-zinc-400 hover:text-cyan-500 dark:hover:text-cyan-400 bg-zinc-100 dark:bg-zinc-900'}`}
+              title="Copy Credentials & Open"
             >
-              <Lock size={18} />
+              <Lock size={16} />
+              <span className="text-xs font-semibold">{copied ? "Copied!" : "Demo Access"}</span>
             </button>
           )}
           <a href="#" className="p-2 text-zinc-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors bg-zinc-100 dark:bg-zinc-900 rounded-lg">
@@ -81,27 +92,6 @@ function ProjectCard({ project, i }: { project: typeof projects[0], i: number })
           </a>
         </div>
       </div>
-
-      <AnimatePresence>
-        {showCreds && project.credentials && (
-          <motion.div
-            initial={{ opacity: 0, height: 0, marginBottom: 0 }}
-            animate={{ opacity: 1, height: "auto", marginBottom: 24 }}
-            exit={{ opacity: 0, height: 0, marginBottom: 0 }}
-            className="overflow-hidden"
-          >
-            <div className="p-4 bg-cyan-50 dark:bg-cyan-900/10 border border-cyan-100 dark:border-cyan-900/30 rounded-xl text-sm">
-              <div className="flex mb-2 items-center text-cyan-800 dark:text-cyan-300 font-semibold">
-                <Key size={14} className="mr-2" /> Demo Access
-              </div>
-              <div className="text-zinc-600 dark:text-zinc-400 font-mono">
-                <div><span className="text-zinc-400 dark:text-zinc-500 select-none">User:</span> {project.credentials.username}</div>
-                <div><span className="text-zinc-400 dark:text-zinc-500 select-none">Pass:</span> {project.credentials.password}</div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 group-hover:text-cyan-500 transition-colors">{project.title}</h3>
       <p className="text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
