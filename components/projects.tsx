@@ -15,6 +15,14 @@ const projects = [
     hasCredentials: true
   },
   {
+  title: "Vanguard Clinics Website",
+  description: "Developed a professional healthcare website for a Canada-based clinic. Focused on responsive design, user-friendly navigation, and clear presentation of medical services to enhance patient engagement.",
+  tech: ["React.js", "Next.js", "Tailwind CSS", "Responsive Design"],
+  icon: <Globe className="text-green-500" />,
+  link: "https://vanguardclinics.ca/",
+  hasCredentials: false
+},
+  {
     title: "Audio Vision Event",
     description: "Premium event management and audio-visual services platform. Built with a focus on high-end aesthetics, smooth performance, and high conversion for international event planning.",
     tech: ["Next.js", "Tailwind CSS", "Premium UI"],
